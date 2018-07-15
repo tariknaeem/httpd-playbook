@@ -1,5 +1,5 @@
 ---
-- hosts: webservers 
+- hosts: web
   become: true
   tasks:
   - name: ensure apache is at the latest version
@@ -10,10 +10,7 @@
     service:
       name: httpd
       state: started
-  - name: copy the index.html to target
-    copy: 
-      src: /tmp/index.html 
-      dest: /var/www/html/index.html
+
 
 
 
